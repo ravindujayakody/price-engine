@@ -15,9 +15,7 @@ public class ShoppingCartService {
     }
 
     public double calculatePrice(long productId, int purchaseQuantity){
-//        Product product = productRepository.getById(productId);
-        Product product = new Product("Penguin-ears", 20, 175.00);
-
+        Product product = productRepository.getById(productId);
         return PriceCalculator.calculate(product, purchaseQuantity);
     }
 }
